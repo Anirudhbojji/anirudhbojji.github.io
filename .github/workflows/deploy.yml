@@ -27,6 +27,9 @@ jobs:
       - run: npm run build
         env:
           CI: false
+      # SPA fallback: GitHub Pages serves 404.html for unknown paths, so the
+      # app must load there too for React Router deep links to work
+      - run: cp build/index.html build/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
