@@ -845,3 +845,29 @@ button:focus {
     font-size: 0.72em;
   }
 }
+
+/* --- generated art + identity card --- */
+.hero-art {
+  filter: drop-shadow(0 0 30px rgba(57, 194, 255, 0.12));
+}
+
+.hero-art-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.identity-card {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.identity-json {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95em;
+  color: var(--accent);
+  margin: 6px 0 0 0;
+  background: transparent;
+  white-space: pre;
+  overflow-x: auto;
+}

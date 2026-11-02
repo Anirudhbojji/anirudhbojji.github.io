@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -61,8 +60,31 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+            <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8}>
+              <div className="term-window identity-card">
+                <div className="term-titlebar">
+                  <span className="term-dot term-dot-red" />
+                  <span className="term-dot term-dot-yellow" />
+                  <span className="term-dot term-dot-green" />
+                  <span className="term-title">~/identity.json</span>
+                </div>
+                <div className="term-body">
+                  <div>
+                    <span className="term-prompt">$</span> cat identity.json
+                  </div>
+                  <pre className="identity-json">
+{`{
+  "node":      "anirudh",
+  "role":      "network-engineer",
+  "planes":    ["data", "control"],
+  "langs":     ["python", "go", "c"],
+  "clouds":    ["aws", "gcp", "azure"],
+  "papers":    4,
+  "state":     "FORWARDING"
+}`}
+                  </pre>
+                </div>
+              </div>
             </Tilt>
           </Col>
         </Row>
