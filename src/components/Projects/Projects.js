@@ -8,7 +8,6 @@ import pcap from "../../Assets/Projects/pcap.png";
 import ctphish from "../../Assets/Projects/ctphish.png";
 import footprint from "../../Assets/Projects/footprint.png";
 import gcn from "../../Assets/Projects/gcn.png";
-import sarcasm from "../../Assets/Projects/sarcasm.png";
 import dr from "../../Assets/Projects/DR.png";
 
 function Projects() {
@@ -93,18 +92,6 @@ function Projects() {
               37k-node social graph. Published in the Indian Journal of Technical Education (ISTE),
               Vol. 47 No. 2, 2024."
               ghLink="https://github.com/Anirudhbojji/github-user-classification-gcn"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={sarcasm}
-              isBlog={false}
-              title="Telugu Sarcasm Classification"
-              description="Sarcasm detection for a low-resource language: IndicNLP FastText embeddings with
-              classical ML and RNN models under heavy class imbalance. Code for the FICTA 2024 (Springer)
-              paper."
-              ghLink="https://github.com/Anirudhbojji/telugu-sarcasm-classification"
             />
           </Col>
 

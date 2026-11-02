@@ -24,7 +24,6 @@ const papers = [
     year: "2024",
     authors:
       "V. Battula, N.T. Nune, A. Bojji, B.S. Reddy, C. Namani, S. Polisetty, P. Chacham et al.",
-    code: "https://github.com/Anirudhbojji/telugu-sarcasm-classification",
   },
   {
     title:
