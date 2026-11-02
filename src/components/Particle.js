@@ -1,6 +1,7 @@
 import React from "react";
 import Particles from "react-tsparticles";
 
+// Network-mesh particles: nodes with faint links, like a topology map.
 function Particle() {
   return (
     <Particles
@@ -8,41 +9,62 @@ function Particle() {
       params={{
         particles: {
           number: {
-            value: 160,
+            value: 70,
             density: {
               enable: true,
-              value_area: 1500,
+              value_area: 1200,
             },
           },
+          color: {
+            value: "#39c2ff",
+          },
           line_linked: {
-            enable: false,
-            opacity: 0.03,
+            enable: true,
+            distance: 160,
+            color: "#39c2ff",
+            opacity: 0.08,
+            width: 1,
           },
           move: {
-            direction: "right",
-            speed: 0.05,
+            enable: true,
+            direction: "none",
+            speed: 0.3,
+            random: true,
+            out_mode: "out",
           },
           size: {
-            value: 1,
+            value: 1.6,
+            random: true,
           },
           opacity: {
+            value: 0.35,
             anim: {
               enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+              speed: 0.6,
+              opacity_min: 0.08,
             },
           },
         },
         interactivity: {
           events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
             onclick: {
               enable: true,
               mode: "push",
             },
           },
           modes: {
+            grab: {
+              distance: 180,
+              line_linked: {
+                opacity: 0.25,
+              },
+            },
             push: {
-              particles_nb: 1,
+              particles_nb: 2,
             },
           },
         },
