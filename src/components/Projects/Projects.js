@@ -17,11 +17,11 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          show <strong className="purple">dataplane</strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Tools that watch real systems, research code, and one router made of
-          silicon.
+        <p className="cmd-sub">
+          # projects — where the packets actually get forwarded: tools that
+          watch real systems, research code, and one router made of silicon
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">

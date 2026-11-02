@@ -13,7 +13,40 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <div className="term-window">
+                <div className="term-titlebar">
+                  <span className="term-dot term-dot-red" />
+                  <span className="term-dot term-dot-yellow" />
+                  <span className="term-dot term-dot-green" />
+                  <span className="term-title">visitor@anirudh — ssh — 80×24</span>
+                </div>
+                <div className="term-body">
+                  <div>
+                    <span className="term-prompt">$</span> ssh
+                    visitor@anirudhbojji.github.io
+                  </div>
+                  <div className="term-dim">
+                    Welcome to ANIRUDH-OS (network-engineer build)
+                  </div>
+                  <div>
+                    &nbsp;* control-plane&nbsp;:{" "}
+                    <span className="term-ok">CONVERGED</span>
+                    &nbsp;&nbsp;dataplane&nbsp;:{" "}
+                    <span className="term-ok">FORWARDING</span>
+                  </div>
+                  <div>
+                    &nbsp;* packets dropped&nbsp;:{" "}
+                    <span className="term-ok">0</span>
+                    &nbsp;&nbsp;uptime&nbsp;:{" "}
+                    <span className="term-warn">2+ yrs in prod</span>
+                  </div>
+                  <div className="term-dim">
+                    Last login: just now, from your browser
+                  </div>
+                </div>
+              </div>
+
+              <h1 style={{ paddingBottom: 15, paddingTop: 30 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻

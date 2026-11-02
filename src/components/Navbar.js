@@ -4,21 +4,23 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
-import {
-  AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 
-import { CgFileDocument } from "react-icons/cg";
+// tmux-style window tabs
+const TABS = [
+  { index: 0, name: "home", path: "/" },
+  { index: 1, name: "about", path: "/about" },
+  { index: 2, name: "dataplane", path: "/project" },
+  { index: 3, name: "ctrl-plane", path: "/publications" },
+  { index: 4, name: "run-config", path: "/resume" },
+];
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const location = useLocation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -38,8 +40,11 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/" className="d-flex align-items-center">
           <img src={logo} className="img-fluid logo" alt="brand" />
+          <span className="session-label d-none d-lg-inline">
+            visitor@anirudh:~
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -53,55 +58,22 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/publications"
-                onClick={() => updateExpanded(false)}
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Publications
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
+            {TABS.map((tab) => {
+              const active = location.pathname === tab.path;
+              return (
+                <Nav.Item key={tab.path}>
+                  <Nav.Link
+                    as={Link}
+                    to={tab.path}
+                    onClick={() => updateExpanded(false)}
+                    className={active ? "tmux-tab tmux-tab-active" : "tmux-tab"}
+                  >
+                    {tab.index}:{tab.name}
+                    {active ? "*" : ""}
+                  </Nav.Link>
+                </Nav.Item>
+              );
+            })}
 
             <Nav.Item className="fork-btn">
               <Button

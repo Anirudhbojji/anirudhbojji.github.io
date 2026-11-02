@@ -16,8 +16,8 @@ function Home2() {
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+            <h1 className="cmd-heading" style={{ fontSize: "2.4em" }}>
+              whoami <span className="purple">--introduce</span>
             </h1>
             <p className="home-about-body">
               I am a <b className="purple">network engineer</b> working on
@@ -68,9 +68,10 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1 className="cmd-heading">show <span className="purple">peers</span></h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Feel free to <span className="purple">establish a session</span> on
+              any of these interfaces
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

@@ -50,11 +50,11 @@ function Publications() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My <strong className="purple">Publications </strong>
+          show <strong className="purple">control-plane</strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Peer-reviewed research in graph machine learning and low-resource
-          NLP.
+        <p className="cmd-sub">
+          # publications — peer-reviewed state, distributed via journals and
+          conferences instead of BGP
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {papers.map((p, i) => (

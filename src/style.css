@@ -681,3 +681,167 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* ============================================================
+   SSH-session UX: terminal windows, tmux tabs, status bar
+   ============================================================ */
+
+/* --- terminal window (hero MOTD) --- */
+.term-window {
+  background: rgba(5, 8, 15, 0.88);
+  border: 1px solid rgba(57, 194, 255, 0.28);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55), 0 0 28px rgba(57, 194, 255, 0.06);
+  max-width: 640px;
+  backdrop-filter: blur(8px);
+}
+
+.term-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  background: rgba(13, 22, 38, 0.9);
+  border-bottom: 1px solid rgba(57, 194, 255, 0.16);
+}
+
+.term-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.term-dot-red { background: #ff5f57; }
+.term-dot-yellow { background: #febc2e; }
+.term-dot-green { background: #28c840; }
+
+.term-title {
+  margin-left: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72em;
+  color: var(--text-dim);
+}
+
+.term-body {
+  padding: 14px 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.86em;
+  line-height: 1.75;
+  color: #d7e3f7;
+  text-align: left;
+}
+
+.term-prompt { color: var(--accent-hot); font-weight: 700; }
+.term-dim { color: var(--text-dim); }
+.term-ok { color: var(--accent-ok); font-weight: 600; }
+.term-warn { color: #ffb020; }
+
+/* --- command-style headings --- */
+.cmd-heading {
+  font-family: "JetBrains Mono", monospace !important;
+}
+.cmd-heading::before {
+  content: "> ";
+  color: var(--accent-hot);
+  font-weight: 700;
+}
+
+.cmd-sub {
+  color: var(--text-dim) !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.95em !important;
+}
+
+/* --- tmux tabs in the navbar --- */
+.tmux-tab {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.92em !important;
+  color: var(--text-dim) !important;
+  background: rgba(13, 22, 38, 0.6) !important;
+  border: 1px solid rgba(57, 194, 255, 0.18) !important;
+  border-radius: 6px !important;
+  padding: 0.4rem 0.85rem !important;
+  margin: 0.35rem 0 !important;
+  transition: all 0.25s ease !important;
+}
+
+.tmux-tab:hover {
+  color: var(--accent) !important;
+  border-color: rgba(57, 194, 255, 0.55) !important;
+  background: rgba(57, 194, 255, 0.08) !important;
+}
+
+.tmux-tab-active {
+  color: #071018 !important;
+  background: linear-gradient(135deg, #39c2ff, #2a9fdc) !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+}
+
+.tmux-tab-active:hover {
+  color: #071018 !important;
+}
+
+.navbar-nav .tmux-tab::after {
+  display: none !important;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.session-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78em;
+  color: var(--text-dim);
+  margin-left: 12px;
+  border-left: 1px solid rgba(57, 194, 255, 0.25);
+  padding-left: 12px;
+}
+
+/* --- tmux status-bar footer --- */
+.footer-status {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82em;
+  text-align: left;
+  padding-left: 28px !important;
+}
+
+.footer-status-right {
+  text-align: right;
+  padding-right: 28px !important;
+}
+
+.status-chip {
+  color: #071018;
+  background: var(--accent);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-weight: 700;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-ok);
+  box-shadow: 0 0 8px rgba(77, 255, 157, 0.8);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { opacity: 1; }
+  50% { opacity: 0.35; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 767px) {
+  .term-window {
+    max-width: 100%;
+  }
+  .term-body {
+    font-size: 0.72em;
+  }
+}

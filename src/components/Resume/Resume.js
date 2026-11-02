@@ -24,6 +24,14 @@ function Resume() {
     <Container fluid className="resume-section">
       <Particle />
       <Row style={{ justifyContent: "center", position: "relative" }}>
+        <h1 className="project-heading" style={{ textAlign: "center" }}>
+          show <strong className="purple">running-config</strong>
+        </h1>
+        <p className="cmd-sub" style={{ textAlign: "center" }}>
+          # the current state of this node, in PDF form
+        </p>
+      </Row>
+      <Row style={{ justifyContent: "center", position: "relative", paddingTop: "20px" }}>
         <Button
           variant="primary"
           href={pdf}
