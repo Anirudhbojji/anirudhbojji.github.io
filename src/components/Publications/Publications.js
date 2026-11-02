@@ -56,7 +56,14 @@ function Publications() {
           # publications — peer-reviewed state, distributed via journals and
           conferences instead of BGP
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row
+          style={{
+            justifyContent: "center",
+            paddingBottom: "10px",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
           {papers.map((p, i) => (
             <Col md={6} className="project-card" key={i}>
               <Card className="project-card-view">
@@ -89,7 +96,7 @@ function Publications() {
             </Col>
           ))}
         </Row>
-        <Row style={{ justifyContent: "center" }}>
+        <Row style={{ justifyContent: "center", position: "relative", zIndex: 2 }}>
           <Col md={12} style={{ textAlign: "center", paddingTop: "10px" }}>
             <Button
               variant="primary"
