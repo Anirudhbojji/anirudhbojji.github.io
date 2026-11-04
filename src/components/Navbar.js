@@ -15,6 +15,7 @@ const TABS = [
   { index: 2, name: "dataplane", path: "/project" },
   { index: 3, name: "ctrl-plane", path: "/publications" },
   { index: 4, name: "run-config", path: "/resume" },
+  { index: 5, name: "console", path: "/console", hot: true },
 ];
 
 function NavBar() {
@@ -66,10 +67,15 @@ function NavBar() {
                     as={Link}
                     to={tab.path}
                     onClick={() => updateExpanded(false)}
-                    className={active ? "tmux-tab tmux-tab-active" : "tmux-tab"}
+                    className={
+                      "tmux-tab" +
+                      (active ? " tmux-tab-active" : "") +
+                      (tab.hot && !active ? " tmux-tab-hot" : "")
+                    }
                   >
                     {tab.index}:{tab.name}
                     {active ? "*" : ""}
+                    {tab.hot && !active ? <span className="hot-dot" /> : null}
                   </Nav.Link>
                 </Nav.Item>
               );
